@@ -2,14 +2,14 @@ const settings = {
   "name": "twentytwenty-react",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.io",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://twentytwenty-react.enamul.now.sh",
+      "title": "TwentyTwenty (React)",
+      "description": "TwentyTwenty Theme build with React"
     }
   },
   "packages": [
     {
-      "name": "@frontity/mars-theme",
+      "name": "twentytwenty-theme",
       "state": {
         "theme": {
           "menu": [
@@ -45,7 +45,8 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "api": "https://test.frontity.io/wp-json"
+          // "api": "https://public-api.wordpress.com/wp/v2/sites/wpthemetestdata.wordpress.com"
+          "api": "https://test.frontity.io/wp-json/"
         }
       }
     },
