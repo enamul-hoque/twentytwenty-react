@@ -4,18 +4,40 @@ import Link from "./link";
 import Nav from "./nav";
 
 const Header = ({ state }) => (
-  <>
+  <HeaderSection>
+    <HeaderTop>
+      <HeaderTopLink link="/">Black Friday Deal: Get 60% Discount on Premium Plugins!</HeaderTopLink>
+    </HeaderTop>
+
     <Container>
       <StyledLink link="/">
-        <Title>{state.frontity.title}</Title>
+        <Title>{state.frontity.title}<Small>Theme</Small></Title>
       </StyledLink>
       <Description>{state.frontity.description}</Description>
     </Container>
     <Nav />
-  </>
+  </HeaderSection>
 );
 
 export default connect(Header);
+
+const HeaderSection = styled.header`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1f38c5;
+`;
+
+const HeaderTop = styled.div`
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+`;
+
+const HeaderTopLink = styled(Link)`
+  display: block;
+  padding: 0 15px;
+`;
 
 const Container = styled.div`
   width: 848px;
@@ -33,11 +55,11 @@ const Title = styled.h2`
   margin-bottom: 16px;
 `;
 
+const Small = styled.small``;
+
 const Description = styled.h4`
   margin: 0;
   color: rgba(255, 255, 255, 0.7);
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
-`;
+const StyledLink = styled(Link)``;

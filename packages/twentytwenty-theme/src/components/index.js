@@ -1,11 +1,14 @@
 import React from "react";
 import { Global, css, connect, styled, Head } from "frontity";
+import fontInterVerUpright from "./fonts/Inter-upright-var.woff2";
+import fontInterVerItalic from "./fonts/Inter-italic-var.woff2";
 import Header from "./header";
 import List from "./list";
 import Post from "./post";
 import Page404 from "./page404.js";
 import Loading from "./loading";
 import Title from "./title";
+import Footer from "./footer";
 
 // Theme is the root React component of our theme. The one we will export
 // in roots.
@@ -27,9 +30,7 @@ const Theme = ({ state }) => {
       <Global styles={globalStyles} />
 
       {/* Add the header of the site. */}
-      <HeadContainer>
-        <Header />
-      </HeadContainer>
+      <Header />
 
       {/* Add the main section. It renders a different component depending
       on the type of URL we are in. */}
@@ -39,6 +40,9 @@ const Theme = ({ state }) => {
           (data.isPostType && <Post />) ||
           (data.is404 && <Page404 />)}
       </Main>
+
+      {/* Add the Footer of the site. */}
+      <Footer />
     </>
   );
 };
@@ -46,23 +50,42 @@ const Theme = ({ state }) => {
 export default connect(Theme);
 
 const globalStyles = css`
+  @font-face {
+    font-family: "Inter var";
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src: url(${fontInterVerUpright}) format("woff2");
+  }
+
+  @font-face {
+    font-family: "Inter var";
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+    src: url(${fontInterVerItalic}) format("woff2");
+  }
+
   body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-      "Droid Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
   }
+
+  a {
+    text-decoration: none;
+  }
+
   a,
   a:visited {
     color: inherit;
-    text-decoration: none;
   }
-`;
 
-const HeadContainer = styled.div`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  background-color: #1f38c5;
+  a:hover {
+    text-decoration: underline;
+  }
+
+  p { margin: 0 0 10px; }
+  p:last-child { margin-bottom: 0; }
 `;
 
 const Main = styled.div`
