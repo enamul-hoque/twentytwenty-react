@@ -1,95 +1,106 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
+import SearchWidget from "./widgets/search-widget.js";
 
 const Footer = ({ state }) => (
-  <FooterSection>
-    <FooterWidgets>
-      <FooterWidgetsContainer>
-        <FooterWidgetRow>
-          <FooterWidgetColumns>
-            <FooterWidgetColumnInner>
-              <FooterSearchWidget method="get" action="#">
-                <FooterSearchWidgetInput type="search" name="s" placeholder="Search …" />
-                <FooterSearchWidgetButton type="submit" placeholder="Search" />
-              </FooterSearchWidget>
+  <>
+    <footer className="footer_section">
+      <div className="container">
+        <div className="footer_widgets row">
+          <div className="footer_widget column-half">
+            {/*<SearchWidget />*/}
+            {/*<h4 className="footer_widget_title">Search Widget</h4>*/}
+          </div>
+        </div>
+      </div>
+    </footer>
 
-              <FooterWidgetTitle>Recent Posts</FooterWidgetTitle>
+    <FooterSection>
+      <FooterWidgets>
+        <FooterWidgetsContainer>
+          <FooterWidgetRow>
+            <FooterWidgetColumns>
+              <FooterWidgetColumnInner>
+                <SearchWidget submitBtnText="Search" placeholder="Search..." />
 
-              <FooterLinksWidget className="post-list">
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Hello world!</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: HTML Tags and Formatting</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: Image Alignment</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: Text Alignment</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: Title With Special Characters</FooterLinksWidgetA></FooterLinksWidgetLI>
-              </FooterLinksWidget>
+                <FooterWidgetTitle>Recent Posts</FooterWidgetTitle>
 
-              <FooterWidgetTitle>Recent Comments</FooterWidgetTitle>
+                <FooterLinksWidget className="post-list">
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Hello world!</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: HTML Tags and Formatting</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: Image Alignment</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: Text Alignment</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Markup: Title With Special Characters</FooterLinksWidgetA></FooterLinksWidgetLI>
+                </FooterLinksWidget>
 
-              <FooterLinksWidget className="post-list">
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">A WordPress Commenter</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Hello world!</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">John Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Edge Case: No Content</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Jane Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Protected: Template: Password Protected (the password is “enter”)</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Jane Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Template: Comments</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">John Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Template: Comments</FooterLinksWidgetA></FooterLinksWidgetLI>
-              </FooterLinksWidget>
-            </FooterWidgetColumnInner>
-          </FooterWidgetColumns>
+                <FooterWidgetTitle>Recent Comments</FooterWidgetTitle>
 
-          <FooterWidgetColumns>
-            <FooterWidgetColumnInner>
-              <FooterWidgetTitle>Archives</FooterWidgetTitle>
+                <FooterLinksWidget className="post-list">
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">A WordPress Commenter</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Hello world!</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">John Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Edge Case: No Content</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Jane Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Protected: Template: Password Protected (the password is “enter”)</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Jane Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Template: Comments</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">John Doe</FooterLinksWidgetA> <FooterLinksWidgetSpan>on</FooterLinksWidgetSpan> <FooterLinksWidgetA link="#">Template: Comments</FooterLinksWidgetA></FooterLinksWidgetLI>
+                </FooterLinksWidget>
+              </FooterWidgetColumnInner>
+            </FooterWidgetColumns>
 
-              <FooterLinksWidget>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">January 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">February 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">March 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">April 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">May 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">June 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">July 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">August 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">September 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">October 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">November 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">December 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
-              </FooterLinksWidget>
+            <FooterWidgetColumns>
+              <FooterWidgetColumnInner>
+                <FooterWidgetTitle>Archives</FooterWidgetTitle>
 
-              <FooterWidgetTitle>Categories</FooterWidgetTitle>
+                <FooterLinksWidget>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">January 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">February 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">March 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">April 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">May 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">June 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">July 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">August 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">September 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">October 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">November 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">December 2019</FooterLinksWidgetA></FooterLinksWidgetLI>
+                </FooterLinksWidget>
 
-              <FooterLinksWidget>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">aciform</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">broder</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Child 1</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">dispatch</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Edge Case</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Foo A</FooterLinksWidgetA></FooterLinksWidgetLI>
-              </FooterLinksWidget>
+                <FooterWidgetTitle>Categories</FooterWidgetTitle>
 
-              <FooterWidgetTitle>Meta</FooterWidgetTitle>
+                <FooterLinksWidget>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">aciform</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">broder</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Child 1</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">dispatch</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Edge Case</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Foo A</FooterLinksWidgetA></FooterLinksWidgetLI>
+                </FooterLinksWidget>
 
-              <FooterLinksWidget>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Log in</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Entries feed</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Comments feed</FooterLinksWidgetA></FooterLinksWidgetLI>
-                <FooterLinksWidgetLI><FooterLinksWidgetA link="#">WordPress.org</FooterLinksWidgetA></FooterLinksWidgetLI>
-              </FooterLinksWidget>
-            </FooterWidgetColumnInner>
-          </FooterWidgetColumns>
-        </FooterWidgetRow>
-      </FooterWidgetsContainer>
-    </FooterWidgets>
+                <FooterWidgetTitle>Meta</FooterWidgetTitle>
 
-    <FooterBottom>
-      <FooterBottomContainer>
-        <FooterDivier></FooterDivier>
+                <FooterLinksWidget>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Log in</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Entries feed</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">Comments feed</FooterLinksWidgetA></FooterLinksWidgetLI>
+                  <FooterLinksWidgetLI><FooterLinksWidgetA link="#">WordPress.org</FooterLinksWidgetA></FooterLinksWidgetLI>
+                </FooterLinksWidget>
+              </FooterWidgetColumnInner>
+            </FooterWidgetColumns>
+          </FooterWidgetRow>
+        </FooterWidgetsContainer>
+      </FooterWidgets>
 
-        <FooterCopyright><FooterCopyrightStrong>&copy; 2019 <StyledLink link="/">{state.frontity.title}</StyledLink></FooterCopyrightStrong> <FooterCopyrightDesktop>Powered by <StyledLink link="https://wordpress.org" target="_blank">WordPress</StyledLink> & <StyledLink link="https://reactjs.org" target="_blank">React</StyledLink></FooterCopyrightDesktop></FooterCopyright>
+      <FooterBottom>
+        <FooterBottomContainer>
+          <FooterDivier></FooterDivier>
 
-        <BackToTop link="#top"><BackToTopDesktop>To the top</BackToTopDesktop><BackToTopMobile>Up</BackToTopMobile><BackToTopIcon></BackToTopIcon>↑</BackToTop>
-      </FooterBottomContainer>
-    </FooterBottom>
-  </FooterSection>
+          <FooterCopyright><FooterCopyrightStrong>&copy; 2019 <StyledLink link="/">{state.frontity.title}</StyledLink></FooterCopyrightStrong> <FooterCopyrightDesktop>Powered by <StyledLink link="https://wordpress.org" target="_blank">WordPress</StyledLink> & <StyledLink link="https://reactjs.org" target="_blank">React</StyledLink></FooterCopyrightDesktop></FooterCopyright>
+
+          <BackToTop link="#top"><BackToTopDesktop>To the top</BackToTopDesktop><BackToTopMobile>Up</BackToTopMobile><BackToTopIcon></BackToTopIcon>↑</BackToTop>
+        </FooterBottomContainer>
+      </FooterBottom>
+    </FooterSection>
+  </>
 );
 
 export default connect(Footer);
@@ -143,35 +154,6 @@ const FooterWidgetTitle = styled.h4`
   &:not(:first-child) {
     margin-top: 50px;
   }
-`;
-
-const FooterSearchWidget = styled.form`
-  display: flex;
-`;
-
-const FooterSearchWidgetInput = styled.input`
-  display: block;
-  flex-grow: 1;
-  margin-right: 8px;
-  padding: 18px 20px;
-  border: 1px solid #dedfdf;
-  font-family: inherit;
-  font-size: 16px;
-  outline: 0;
-`;
-
-const FooterSearchWidgetButton = styled.input`
-  display: block;
-  padding: 19px 25px;
-  color: #fff;
-  background-color: #cd2653;
-  border-width: 0;
-  font-family: inherit;
-  font-size: 17px;
-  font-weight: 600;
-  text-transform: uppercase;
-  cursor: pointer;
-  outline: 0;
 `;
 
 const FooterLinksWidget = styled.ul`

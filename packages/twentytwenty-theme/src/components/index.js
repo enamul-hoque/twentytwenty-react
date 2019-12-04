@@ -69,6 +69,7 @@ const globalStyles = css`
   body {
     margin: 0;
     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+    line-height: 1.2;
   }
 
   a {
