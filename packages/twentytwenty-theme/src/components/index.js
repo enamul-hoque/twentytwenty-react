@@ -51,6 +51,8 @@ const Theme = ({ state }) => {
 export default connect(Theme);
 
 const globalStyles = css`
+  * { box-sizing: border-box; }
+
   @font-face {
     font-family: "Inter var";
     font-weight: 100 900;
@@ -88,6 +90,26 @@ const globalStyles = css`
 
   p, ul { margin: 0 0 10px; }
   p:last-child, ul:last-child { margin-bottom: 0; }
+
+  .container {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .container-fluid {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .flex-center {
+    align-items: center;
+  }
 `;
 
 const Main = styled.div`
