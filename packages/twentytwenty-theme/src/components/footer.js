@@ -1,20 +1,22 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
-import SearchWidget from "./widgets/search-widget.js";
+import SearchWidget from "./widgets/search-widget";
 
 const Footer = ({ state }) => (
   <>
+    {/*
     <footer className="footer_section">
       <div className="container">
         <div className="footer_widgets row">
           <div className="footer_widget column-half">
-            {/*<SearchWidget />*/}
-            {/*<h4 className="footer_widget_title">Search Widget</h4>*/}
+            <SearchWidget submitBtnText="Search" placeholder="Search..." />
+            <h4 className="footer_widget_title">Search Widget</h4>
           </div>
         </div>
       </div>
     </footer>
+    */}
 
     <FooterSection>
       <FooterWidgets>

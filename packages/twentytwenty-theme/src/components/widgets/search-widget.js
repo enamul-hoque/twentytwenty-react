@@ -1,7 +1,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 
-const SearchWidget = ({ className, placeholder, submitBtnText }) => {
+const SearchWidget = ({ state, placeholder, submitBtnText }) => {
   return (
     <SearchWidgetForm method="get" action="#">
       <input type="search" name="s" placeholder={placeholder} />

@@ -23,6 +23,7 @@ const Theme = ({ state }) => {
       <Head>
         <meta name="description" content={state.frontity.description} />
         <html lang="en" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" />
       </Head>
 
       {/* Add some global styles for the whole site, like body or a's. 
@@ -85,8 +86,8 @@ const globalStyles = css`
     text-decoration: underline;
   }
 
-  p { margin: 0 0 10px; }
-  p:last-child { margin-bottom: 0; }
+  p, ul { margin: 0 0 10px; }
+  p:last-child, ul:last-child { margin-bottom: 0; }
 `;
 
 const Main = styled.div`

@@ -2,12 +2,11 @@ import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import Nav from "./nav";
+import NoticeBar from "./header/notice-bar";
 
 const Header = ({ state }) => (
   <HeaderSection>
-    <HeaderTop>
-      <HeaderTopLink link="/">Black Friday Deal: Get 60% Discount on Premium Plugins!</HeaderTopLink>
-    </HeaderTop>
+    <NoticeBar />
 
     <Container>
       <StyledLink link="/">
@@ -22,21 +21,7 @@ const Header = ({ state }) => (
 export default connect(Header);
 
 const HeaderSection = styled.header`
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   background-color: #1f38c5;
-`;
-
-const HeaderTop = styled.div`
-  width: 100%;
-  background-color: #fff;
-  text-align: center;
-`;
-
-const HeaderTopLink = styled(Link)`
-  display: block;
-  padding: 0 15px;
 `;
 
 const Container = styled.div`
