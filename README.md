@@ -1,5 +1,4 @@
-# twentytwenty-react
- TwentyTwenty Theme (React)
+TwentyTwenty Theme (React)
  
 ## Run
 `npm install && npx frontity dev`
