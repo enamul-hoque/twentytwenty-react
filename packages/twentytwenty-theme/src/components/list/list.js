@@ -8,37 +8,36 @@ const List = ({ state }) => {
   const data = state.source.get(state.router.link);
 
   return (
-    <Container>
-      {/* If the list is a taxonomy, we render a title. */}
-      {data.isTaxonomy && (
-        <Header>
-          {data.taxonomy}: {state.source[data.taxonomy][data.id].name}
-        </Header>
-      )}
+    <Section>
+      <div className="container">
+        {/* If the list is a taxonomy, we render a title. */}
+        {data.isTaxonomy && (
+          <Header>
+            {data.taxonomy}: {state.source[data.taxonomy][data.id].name}
+          </Header>
+        )}
 
-      {/* If the list is an author, we render a title. */}
-      {data.isAuthor && (
-        <Header>Author: {state.source.author[data.id].name}</Header>
-      )}
+        {/* If the list is an author, we render a title. */}
+        {data.isAuthor && (
+          <Header>Author: {state.source.author[data.id].name}</Header>
+        )}
 
-      {/* Iterate over the items of the list. */}
-      {data.items.map(({ type, id }) => {
-        const item = state.source[type][id];
-        // Render one Item component for each one.
-        return <Item key={item.id} item={item} />;
-      })}
-      <Pagination />
-    </Container>
+        {/* Iterate over the items of the list. */}
+        {data.items.map(({ type, id }) => {
+          const item = state.source[type][id];
+          // Render one Item component for each one.
+          return <Item key={item.id} item={item} />;
+        })}
+        <Pagination />
+      </div>
+    </Section>
   );
 };
 
 export default connect(List);
 
-const Container = styled.section`
-  width: 800px;
-  margin: 0;
-  padding: 24px;
-  list-style: none;
+const Section = styled.section`
+  display: block;
 `;
 
 const Header = styled.h3`

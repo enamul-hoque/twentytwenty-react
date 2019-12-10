@@ -14,7 +14,7 @@ const NoticeBar = () => {
 
       <a href="https://wordpress.org/plugins/elementskit-lite/" target="_blank" className="sponsor">Sponsor <i className="far fa-heart"></i> ElementsKit Elementor Addon</a>
 
-      <a href="#" download="twentytwenty-react.zip"><i className="fa fa-download"></i>Download TwentyTwenty (React)</a>
+      <a href="https://github.com/enamul-hoque/twentytwenty-react/archive/master.zip" download><i className="fa fa-download"></i>Download TwentyTwenty (React)</a>
     </NoticeBarEl>
   );
 };
@@ -32,6 +32,7 @@ const NoticeBarEl = styled.div`
   color: #fff;
   background-color: #cd2653;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 999;
 
   > ul {
     display: inline-flex;

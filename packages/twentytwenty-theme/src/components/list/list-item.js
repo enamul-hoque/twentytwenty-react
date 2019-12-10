@@ -6,61 +6,133 @@ import FeaturedMedia from "../featured-media";
 const Item = ({ state, item }) => {
   const author = state.source.author[item.author];
   const date = new Date(item.date);
+  const catFirst = state.source.category[ item.categories[0] ];
 
   return (
-    <article>
-      <Link link={item.link}>
-        <Title dangerouslySetInnerHTML={{ __html: item.title.rendered }} />
-      </Link>
-      <div>
-        {author && (
-          <StyledLink link={author.link}>
-            <Author>
-              By <b>{author.name}</b>
-            </Author>
-          </StyledLink>
-        )}
-        <Fecha>
-          {" "}
-          on <b>{date.toDateString()}</b>
-        </Fecha>
-      </div>
+    <PostItem>
+      <p className="cat"><Link link={ catFirst.link }>{ catFirst.name }</Link></p>
+
+      <h2 className="title"><Link link={ item.link }><span dangerouslySetInnerHTML={{ __html: item.title.rendered }}></span></Link></h2>
+
+      <ul className="meta">
+        {author && ( <li><i className="far fa-user"></i>By <Link link={ author.link }>{ author.name }</Link></li> )}
+        <li><i className="far fa-calendar"></i><span>{ date.toDateString() }</span></li>
+        { item.sticky && ( <li><i className="far fa-bookmark"></i><span>Sticky Post</span></li> ) }
+      </ul>
+
       {state.theme.featured.showOnList && (
         <FeaturedMedia id={item.featured_media} />
       )}
-      {item.excerpt && (
-        <Excerpt dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }} />
-      )}
-    </article>
+
+      {item.excerpt && ( <div className="excerpt post-content" dangerouslySetInnerHTML={{ __html: item.excerpt.rendered }}></div> )}
+
+      {item.tags.length ? (
+      <ul className="meta bottom">
+        <li><i className="fa fa-tags"></i></li>
+        {item.tags.map((val, indx) => {
+          return <li key={indx}><Link link={ state.source.tag[ val ].link }>{ state.source.tag[ val ].name }</Link></li>;
+        })}
+      </ul>
+      ) : ''}
+    </PostItem>
   );
 };
 
 export default connect(Item);
 
-const Title = styled.h1`
-  font-size: 2rem;
-  color: rgba(12, 17, 43);
-  margin: 0;
-  padding-top: 24px;
-  padding-bottom: 8px;
-  box-sizing: border-box;
-`;
+const PostItem = styled.article`
+  position: relative;
+  margin-bottom: 80px;
+  text-align: center;
+  z-index: 0;
 
-const Author = styled.span`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-`;
+  &:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -7px;
+    width: 10px;
+    height: 16px;
+    margin: 0 auto;
+    border-style: solid;
+    border-width: 0 1px;
+    border-color: #6d6d6d;
+    transform: skewX(-20deg);
+  }
 
-const StyledLink = styled(Link)`
-  padding: 15px 0;
-`;
+  &:after {
+    content: " ";
+    display: block;
+    margin: 82px 0 0;
+    height: 1px;
+    color: #6d6d6d;
+    background: linear-gradient(to left, currentColor calc(50% - 16px), transparent calc(50% - 16px), transparent calc(50% + 16px), currentColor calc(50% + 16px));
+  }
 
-const Fecha = styled.span`
-  color: rgba(12, 17, 43, 0.9);
-  font-size: 0.9em;
-`;
+  > .cat {
+    margin-bottom: 30px;
+    color: #cd2653;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.55px;
+    text-transform: uppercase;
 
-const Excerpt = styled.div`
-  line-height: 1.6em;
-  color: rgba(12, 17, 43, 0.8);
+    > a {
+      border-bottom: 2px solid;
+      text-decoration: none;
+      transition: border-color 0.15s linear;
+
+      &:hover {
+        border-bottom-color: transparent;
+      }
+    }
+  }
+
+  > .title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 64px;
+    font-weight: 800;
+  }
+
+  > .meta {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 32px 0 82px;
+    list-style: none;
+    color: #6d6d6d;
+    font-size: 16px;
+    font-weight: 500;
+
+    > li:not(:last-child) {
+      margin-right: 20px;
+    }
+
+    &.bottom {
+      display: flex;
+      max-width: 580px;
+      margin: 0 auto;
+      padding-top: 43px;
+      padding-bottom: 0;
+
+      > li {
+        margin-right: 0;
+
+        & + li + li:before {
+          content: ", ";
+        }
+      }
+    }
+
+    i {
+      margin-right: 10px;
+    }
+  }
+
+  > .excerpt {
+    max-width: 580px;
+    margin: 0 auto;
+  }
 `;

@@ -3,8 +3,6 @@ import { connect, styled } from "frontity";
 import Link from "../link";
 
 const Nav = ({ state }) => {
-  console.log( state );
-
   return (
     <NavEl>
       <ul>
@@ -21,6 +19,7 @@ const Nav = ({ state }) => {
 export default connect(Nav);
 
 const NavEl = styled.nav`
+  display: none;
   margin-left: auto;
 
   > ul {
@@ -37,6 +36,15 @@ const NavEl = styled.nav`
       &:not(:last-child) {
         margin-right: 25px;
       }
+    }
+  }
+
+  @media (min-width: 992px) {
+    display: block;
+    
+    > ul {
+      flex-wrap: nowrap;
+      white-space: nowrap;
     }
   }
 `;

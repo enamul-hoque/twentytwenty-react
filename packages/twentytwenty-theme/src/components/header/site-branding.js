@@ -1,10 +1,17 @@
 import React from "react";
 import { connect, styled } from "frontity";
 
-const SiteBranding = ({ state }) => {
+const SiteBranding = ({ actions, state }) => {
+  const onClick = event => {
+    event.preventDefault();
+    // Set the router to the new url.
+    actions.router.set('/');
+    window.scrollTo(0, 0);
+  };
+
   return (
     <SiteBrandEl>
-      <h1><a href="/">{ state.frontity.title }</a></h1>
+      <h1><a href="/" onClick={onClick}>{ state.frontity.title }</a></h1>
       <p>{ state.frontity.description }</p>
     </SiteBrandEl>
   );
@@ -28,8 +35,15 @@ const SiteBrandEl = styled.div`
   }
 
   > p {
+    display: none;
     color: #6d6d6d;
     font-size: 18px;
     font-weight: 500;
+  }
+
+  @media (min-width: 992px) {
+    > p {
+      display: inline;
+    }
   }
 `;

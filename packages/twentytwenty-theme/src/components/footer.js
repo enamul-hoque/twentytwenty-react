@@ -140,7 +140,8 @@ const FooterWidgetTitle = styled.h4`
   margin: 0;
   font-size: 40px;
 
-  &:not(:first-child) {
+  form + &,
+  ~ h4 {
     margin-top: 50px;
   }
 `;
