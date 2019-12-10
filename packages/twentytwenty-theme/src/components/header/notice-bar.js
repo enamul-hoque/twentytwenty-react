@@ -12,7 +12,7 @@ const NoticeBar = () => {
         <li><a href="https://www.youtube.com/channel/UCysI9ya1DdZMmfyrB2gSw1A/featured" target="_blank" className="fab fa-youtube"></a></li>
       </ul>
 
-      <a href="https://wordpress.org/plugins/elementskit-lite/" target="_blank" className="sponsor">Sponsor <i className="far fa-heart"></i> ElementsKit Elementor Addon</a>
+      <a href="https://products.wpmet.com/elementskit/?rui=21" target="_blank" className="sponsor">Sponsor <i className="far fa-heart"></i> ElementsKit Elementor Addon</a>
 
       <a href="https://github.com/enamul-hoque/twentytwenty-react/archive/master.zip" download><i className="fa fa-download"></i>Download TwentyTwenty (React)</a>
     </NoticeBarEl>
