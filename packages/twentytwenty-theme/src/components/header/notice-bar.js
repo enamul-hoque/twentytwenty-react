@@ -63,6 +63,7 @@ const NoticeBarEl = styled.div`
     }
 
     &.sponsor {
+      visibility: hidden;
       margin-left: auto;
       margin-right: auto;
     }
